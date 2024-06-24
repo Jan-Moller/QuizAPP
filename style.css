@@ -1,0 +1,75 @@
+body {
+    font-family: "Rubik", sans-serif !important;
+}
+
+/*font-family: "PT Sans", sans-serif;*/
+
+.content_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.content {
+    display: flex;
+    min-height: 500px;
+    border-radius: 5px;
+
+}
+
+.card {
+    width: 600px !important;
+    background-image: url('img/brainbg.jpg');
+    background-position: center
+}
+
+.card-body {
+    background-color: rgba(255, 255, 255, 0) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-text {
+    text-align: center;
+    font-size: 24px;
+}
+
+.navbar {
+    background-color: #27355C !important;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-weight: 400!important;
+}
+
+.container-fluid {
+    flex-direction: column;
+    gap: 22px; 
+}
+
+.nav_img {
+    margin-top: 10px;
+}
+
+.btn {
+    width: 200px;
+    border: none;
+    margin: 20px;
+}
+.btn-primary {
+    background-color: #FF4E10;
+}
+
+.btn-position-start-screen {
+    display: flex;
+    justify-content: flex-end;
+}
+
