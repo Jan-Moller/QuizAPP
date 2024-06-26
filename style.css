@@ -171,14 +171,14 @@ body {
 
 .btn-share {
     margin: 0 !important;
-    background-color: blue !important;
+    background-color:#27355C !important;
     z-index: 999;
 }
 
 .btn-restart {
     margin: 0 !important;
     background-color: transparent !important;
-    color: blue;
+    color:#27355C;
     z-index: 999;
 }
 
