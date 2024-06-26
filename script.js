@@ -58,7 +58,7 @@ let questions = [
 ];
 
 let current_question = 0;
-let points = 0; 
+let points = 0;
 
 function init() {
     document.getElementById('question-container').style = '';
@@ -71,9 +71,7 @@ function showQuestions() {
     let percent = Math.round(((current_question + 1) / questions.length) * 100);
 
     if (current_question == questions.length - 1) {
-        document.getElementById('final-btn').disabled = true;
-        document.getElementById('next-btn').style = 'display: none';
-        document.getElementById('final-btn').style = '';
+        lastQuestion();
     }
     document.getElementById('next-btn').disabled = true;
     resetAnswers();
@@ -91,6 +89,8 @@ function showQuestions() {
 
 }
 
+
+
 function checkAnswer(selected_answer) {
     let question = questions[current_question];
     let correct_answer = `answer_${question['right_answer']}`
@@ -98,7 +98,7 @@ function checkAnswer(selected_answer) {
     if (selected_answer == correct_answer) {
         document.getElementById(selected_answer).parentNode.classList.add('bg-success-subtle');
         document.getElementById(selected_answer).previousElementSibling.classList.add('bg-success');
-        points++; 
+        points++;
     }
     else {
         document.getElementById(correct_answer).parentNode.classList.add('bg-success-subtle');
@@ -106,6 +106,7 @@ function checkAnswer(selected_answer) {
         document.getElementById(selected_answer).parentNode.classList.add('bg-danger-subtle');
         document.getElementById(selected_answer).previousElementSibling.classList.add('bg-danger');
     }
+    disableAnswers();
     current_question++
     document.getElementById('next-btn').disabled = false;
     document.getElementById('final-btn').disabled = false;
@@ -132,4 +133,44 @@ function resetAnswers() {
     document.getElementById('answer_2').previousElementSibling.classList.remove('bg-success');
     document.getElementById('answer_3').previousElementSibling.classList.remove('bg-success');
     document.getElementById('answer_4').previousElementSibling.classList.remove('bg-success');
+
+    document.getElementById('answer_1').parentNode.style.pointerEvents = 'auto';
+    document.getElementById('answer_2').parentNode.style.pointerEvents = 'auto';
+    document.getElementById('answer_3').parentNode.style.pointerEvents = 'auto';
+    document.getElementById('answer_4').parentNode.style.pointerEvents = 'auto';
+}
+
+function lastQuestion() {
+    document.getElementById('final-btn').disabled = true;
+    document.getElementById('next-btn').style = 'display: none';
+    document.getElementById('final-btn').style = '';
+}
+
+function showResultScreen() {
+    document.getElementById('question-container').style = 'display: none;';
+    document.getElementById('result-screen').style = '';
+    document.getElementById('score').innerHTML = points; 
+    document.getElementById('max-score').innerHTML = questions.length; 
+    document.getElementById('trophy').style = ''; 
+}
+
+function disableAnswers() {
+    document.getElementById('answer_1').parentNode.style.pointerEvents = 'none';
+    document.getElementById('answer_2').parentNode.style.pointerEvents = 'none';
+    document.getElementById('answer_3').parentNode.style.pointerEvents = 'none';
+    document.getElementById('answer_4').parentNode.style.pointerEvents = 'none';
+}
+
+function restartGame() {
+    current_question = 0;
+    points = 0; 
+    document.getElementById('start-screen').style = '';
+    document.getElementById('result-screen').style = 'display: none';
+    document.getElementById('trophy').style = 'display: none'; 
+    document.getElementById('final-btn').disabled = false;
+    document.getElementById('next-btn').style = '';
+    document.getElementById('final-btn').style = 'display: none !important';
+}
+function notImplemented() {
+    alert('Dieses Feature ist aktuell nicht verfügbar.')
 }

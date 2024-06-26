@@ -11,7 +11,7 @@ body {
 }
 
 .width-500 {
-    width: 500px;
+    width: 90%;
 }
 
 .content_container {
@@ -44,7 +44,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px; 
+    padding: 10px;
 }
 
 .card-body_answers {
@@ -131,4 +131,113 @@ body {
 
 .progress-bar {
     background-color: #fba689;
+}
+
+.result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.result-container img {
+    height: 100px;
+    width: 100px;
+}
+
+.result-font {
+    font-size: 20px;
+    text-align: center;
+}
+
+.score-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.score-font {
+    color: #f57c50;
+    font-size: 20px;
+    margin-right: 70px;
+}
+
+.result-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-share {
+    margin: 0 !important;
+    background-color: blue !important;
+    z-index: 999;
+}
+
+.btn-restart {
+    margin: 0 !important;
+    background-color: transparent !important;
+    color: blue;
+    z-index: 999;
+}
+
+.trophy-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@media(max-width: 880px) {
+    .bg-screen-card {
+        width: 400px !important;
+    }
+
+    .btn {
+        width: 150px;
+        font-size: 15px !important;
+    }
+}
+
+@media(max-width: 630px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .navbar {
+        gap: 20px;
+    }
+
+    .container-fluid {
+        flex-direction: row;
+        gap: unset;
+    }
+
+    .card-body {
+        gap: 20px; 
+    }
+
+    .trophy-container {
+        display: none;
+    }
+}
+
+@media(max-width: 410px) {
+    .bg-screen-card {
+        width: 300px !important;
+    }
+
+    .navbar {
+        width: 300px;
+    }
+
+    .btn {
+        width: 100px;
+        font-size: 15px !important;
+    }
 }
